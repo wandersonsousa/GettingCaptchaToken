@@ -37,21 +37,20 @@ function addEventInElementsList( arrayElements ){
         (e) => {
             e.onclick = (evt) => {
                 evt.preventDefault()
-                const previousCode = evt.target.getAttribute('data-codigoproduto')
-                const capchaToken = document.querySelector('[name="g-recaptcha-response"]').value
-                const size = evt.target.nextElementSibling.innerText
-
+                let previousCode = evt.target.getAttribute('data-codigoproduto')
                 changeCodeId( evt.target )
+                let capchaToken = document.querySelector('[name="g-recaptcha-response"]').value
+                let size = evt.target.nextElementSibling.innerText
+
+
                 let pColor = evt.target.nextElementSibling.style.backgroundColor
                 evt.target.nextElementSibling.style.backgroundColor = '#2ecc71'
 
-                showDataInConsole( capchaToken, size, previousCode )
+                showDataInConsole( capchaToken, size, previousCode)
 
                 setTimeout( ()=> {
                     evt.target.nextElementSibling.style.backgroundColor = pColor;
                 } , 2000)
-
-                showDataInConsole(  )
             }
         }
     )
