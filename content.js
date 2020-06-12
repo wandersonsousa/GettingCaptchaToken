@@ -38,27 +38,41 @@ function addEventInElementsList( arrayElements ){
             e.onclick = (evt) => {
                 evt.preventDefault()
                 const previousCode = evt.target.getAttribute('data-codigoproduto')
+                const capchaToken = document.querySelector('[name="g-recaptcha-response"]').value
+                const size = evt.target.nextElementSibling.innerText
 
-                evt.target.setAttribute('data-codigoproduto', 'abacaxi')
+                changeCodeId()
                 let pColor = evt.target.nextElementSibling.style.backgroundColor
                 evt.target.nextElementSibling.style.backgroundColor = '#2ecc71'
+
+                showDataInConsole( capchaToken, size, previousCode )
+
                 setTimeout( ()=> {
                     evt.target.nextElementSibling.style.backgroundColor = pColor;
                 } , 2000)
-                console.clear()
-                console.log('SUA CAPTCHA KEY SERÁ MOSTRADA ABAIXO')
-                console.log( document.querySelector('[name="g-recaptcha-response"]').value )
-                console.log('COPIE O CÓDIGO ACIMA')
-                console.log('***************************************')
-
-                console.log(`O ID DO SIZE ${evt.target.nextElementSibling.innerText} SERÁ MOSTRADO ABAIXO`)
-                console.log( previousCode )
-                console.log('COPIE O CÓDIGO ACIMA')
+                
+                showDataInConsole(  )
             }
         }
     )
 }
 
+function changeCodeId(){
+    evt.target.setAttribute('data-codigoproduto', 'abacaxi')
+}
+
+
+function showDataInConsole( captchaRes, size, sizeId ){
+    console.clear()
+    console.log('SUA CAPTCHA KEY SERÁ MOSTRADA ABAIXO')
+    console.log( captchaRes )
+    console.log('COPIE O CÓDIGO ACIMA')
+    console.log('***************************************')
+
+    console.log(`O ID DO SIZE ${size} SERÁ MOSTRADO ABAIXO`)
+    console.log( sizeId )
+    console.log('COPIE O CÓDIGO ACIMA')
+}
 
 
 function start(){
