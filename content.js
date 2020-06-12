@@ -41,7 +41,7 @@ function addEventInElementsList( arrayElements ){
                 const capchaToken = document.querySelector('[name="g-recaptcha-response"]').value
                 const size = evt.target.nextElementSibling.innerText
 
-                changeCodeId()
+                changeCodeId( evt.target )
                 let pColor = evt.target.nextElementSibling.style.backgroundColor
                 evt.target.nextElementSibling.style.backgroundColor = '#2ecc71'
 
@@ -50,15 +50,15 @@ function addEventInElementsList( arrayElements ){
                 setTimeout( ()=> {
                     evt.target.nextElementSibling.style.backgroundColor = pColor;
                 } , 2000)
-                
+
                 showDataInConsole(  )
             }
         }
     )
 }
 
-function changeCodeId(){
-    evt.target.setAttribute('data-codigoproduto', 'abacaxi')
+function changeCodeId(el){
+    el.setAttribute('data-codigoproduto', 'abacaxi')
 }
 
 
