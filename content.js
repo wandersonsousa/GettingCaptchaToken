@@ -37,7 +37,8 @@ function addEventInElementsList( arrayElements ){
         (e) => {
             e.onclick = (evt) => {
                 evt.preventDefault()
-                console.log( `${evt.target.getAttribute('data-codigoproduto')} to Abacaxi` )
+                const previousCode = evt.target.getAttribute('data-codigoproduto')
+
                 evt.target.setAttribute('data-codigoproduto', 'abacaxi')
                 let pColor = evt.target.nextElementSibling.style.backgroundColor
                 evt.target.nextElementSibling.style.backgroundColor = '#2ecc71'
@@ -47,6 +48,11 @@ function addEventInElementsList( arrayElements ){
                 console.clear()
                 console.log('SUA CAPTCHA KEY SERÁ MOSTRADA ABAIXO')
                 console.log( document.querySelector('[name="g-recaptcha-response"]').value )
+                console.log('COPIE O CÓDIGO ACIMA')
+                console.log('***************************************')
+
+                console.log(`O ID DO SIZE ${evt.target.nextElementSibling.innerText} SERÁ MOSTRADO ABAIXO`)
+                console.log( previousCode )
                 console.log('COPIE O CÓDIGO ACIMA')
             }
         }
