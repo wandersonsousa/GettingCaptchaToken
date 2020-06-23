@@ -1,9 +1,6 @@
 
 function ExtCore(){
     let domSizesLabel = document.querySelectorAll('.variacoes-tamanhos__lista li:not([class="tamanho-desabilitado"]) label');
-    
-    '03AGdBq27FI34FOsbpXM2BRP4mjhxZbhEE_B8lOBkb4LGZlCoeoz880WEPT_H1oAyc_wbLHBMRCaedt-gkDh2zP86tMfG0154UAr_dOGz9AdOR0jrlknGEcjCWbebkn3bt7ti2aUPKkN2q32auaJj7xBgyZR0aGTkTFd6MP4pU0m-MiRnE2umlLvG4mdBQooJxi4vk0QTRJQnC3Up8K79QDpPI5NQrkc6dQ7R9FNtTNjbf-RE0D6Bc_MDWAuiGyAhnoocyYBoQW9dph3_wRrKUBvvhiGknABvtjWxQMSMgsqtA-o8jg6NHjc7Z9e8dCwXMFB19aYXcB7pqUHMFbLjvKIr1zv2jtueJ2sa8FtoDVrlb8_csLyj39dgxQISPb2sVZh8yhirGqe99dKuhq94RzPh6s0sESETQZQ'
-
 
     if( domSizesLabel.length ){
         handleElementsSizes( domSizesLabel );
