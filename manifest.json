@@ -1,0 +1,27 @@
+{
+    "manifest_version":2,
+    "name":"Capcha Token",
+    "version": "0.1.1",
+    "icons": {"128":"icon.png"},
+    "content_scripts": [
+        {
+            "matches": ["https://www.nike.com.br/Snkrs/Produto/*/*"],
+            "css":["style.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_action": {
+   	 "default_title": "Get Nike Cookie ",
+     "default_popup": "popup.html",
+     "default_icon":"icon.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ]
+}
